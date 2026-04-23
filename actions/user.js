@@ -8,7 +8,7 @@ import { generateAIInsights } from "./dashboard";
 export async function updateUser(data) {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
-
+ 
   const user = await db.user.findUnique({
     where: { clerkUserId: userId },
   });
@@ -28,7 +28,7 @@ export async function updateUser(data) {
 
         // If industry doesn't exist, create it with default values
         if (!industryInsight) {
-          const insights = await generateAIInsights(data.industry);
+          const insights = await generateAIInsights(data.industry,data.skills);
 
           industryInsight = await db.industryInsight.create({
             data: {
