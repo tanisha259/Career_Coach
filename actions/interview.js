@@ -22,7 +22,7 @@ export async function generateQuiz() {
   if (!user) throw new Error("User not found");
 
   const prompt = `
-    Generate 10 technical interview questions for a ${
+    Generate 10 technical interview questions (Medium to Hard) level for a ${
       user.industry
     } professional${
     user.skills?.length ? ` with expertise in ${user.skills.join(", ")}` : ""
@@ -104,7 +104,7 @@ export async function saveQuizResult(questions, answers, score) {
       const tipResult = await model.generateContent(improvementPrompt);
 
       improvementTip = tipResult.response.text().trim();
-      console.log(improvementTip);
+      
     } catch (error) {
       console.error("Error generating improvement tip:", error);
       // Continue without improvement tip if generation fails
