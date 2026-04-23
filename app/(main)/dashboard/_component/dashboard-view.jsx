@@ -29,9 +29,13 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 import { Pointer } from "@/components/magicui/pointer";
+import { redirect } from "next/dist/server/api-utils";
 
 const DashboardView = ({ insights }) => {
   // Transform salary data for the chart
+  if(!insights) {redirect("/onboarding");
+    return;
+  }
   const salaryData = insights.salaryRanges.map((range) => ({
     name: range.role,
     min: range.min / 1000,
