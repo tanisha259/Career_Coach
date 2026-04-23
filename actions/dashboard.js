@@ -3,6 +3,7 @@
 import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { redirect } from "next/navigation";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
@@ -59,7 +60,11 @@ export async function getIndustryInsights() {
 
   // If no insights exist, generate them
   if (!user.industryInsight) {
-    
+    if(!user.industry)
+    {
+      redirect("/onboarding")
+      return;
+    }
     const insights = await generateAIInsights(user.industry);
 
     const industryInsight = await db.industryInsight.create({
