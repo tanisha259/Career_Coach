@@ -87,3 +87,4 @@ This file contains development notes and reminders for the Career Coach project.
 <!-- 2026-05-21T15:42:00+05:30 - chore: code review suggestions -->
 <!-- 2026-05-22T14:57:00+05:30 - docs: minor readme cleanup -->
 <!-- 2026-05-22T16:50:00+05:30 - chore: clean up notes -->
+<!-- 2026-05-23T14:34:00+05:30 - docs: add planning notes -->
