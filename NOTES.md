@@ -109,3 +109,4 @@ This file contains development notes and reminders for the Career Coach project.
 <!-- 2026-06-05T20:19:00+05:30 - docs: notes revision -->
 <!-- 2026-06-05T09:48:00+05:30 - chore: housekeeping -->
 <!-- 2026-06-05T12:49:00+05:30 - chore: update project notes -->
+<!-- 2026-06-06T21:20:00+05:30 - docs: add development notes -->
