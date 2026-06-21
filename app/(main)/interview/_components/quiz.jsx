@@ -110,7 +110,7 @@ export default function Quiz() {
           </p>
         </CardContent>
         <CardFooter>
-          <Button onClick={generateQuizFn} className="w-full">
+          <Button onClick={() => generateQuizFn()} className="w-full">
             Start Quiz
           </Button>
         </CardFooter>
@@ -119,6 +119,25 @@ export default function Quiz() {
   }
 
   const question = quizData[currentQuestion];
+  if (!question) {
+    return (
+      <Card className="mx-2">
+        <CardHeader>
+          <CardTitle>Error</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            Failed to load quiz questions. Please try again.
+          </p>
+        </CardContent>
+        <CardFooter>
+          <Button onClick={() => generateQuizFn()} className="w-full">
+            Retry
+          </Button>
+        </CardFooter>
+      </Card>
+    );
+  }
 
   return (
     <Card className="mx-2">

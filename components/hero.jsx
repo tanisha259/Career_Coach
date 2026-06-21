@@ -7,7 +7,6 @@ import Link from "next/link";
 import VideoBackground from "./shared/VideoBackground";
 import { Pointer } from "@/components/magicui/pointer";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import { RainbowButton } from "@/components/magicui/rainbow-button";
 
 import { dark } from "@clerk/themes";
 import Earth from "./globe";
@@ -63,9 +62,9 @@ const HeroSection = () => {
         </div>
         <div className="flex justify-center space-x-4">
           <Link href="/dashboard">
-            <RainbowButton size="lg" className="px-8 text-lg hover:bg-blue-400 animate-bounce">
+            <Button size="lg" className="px-8 text-lg hover:bg-blue-500 animate-bounce">
               Get Started
-            </RainbowButton>
+            </Button>
           </Link>
           
         </div>

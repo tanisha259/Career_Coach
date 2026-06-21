@@ -31,7 +31,8 @@ import { auth } from "@clerk/nextjs/server";
 
 
 export default async function LandingPage() {
-  const { userId } = await auth();
+  const authObj = await auth();
+  const userId = authObj ? authObj.userId : null;
    
   
     
